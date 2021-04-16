@@ -19,17 +19,17 @@
 
 # bi = bin(529)
 # print(bi[2:])
+from collections import deque
+def solution(num):
+    bi = format(num, 'b')
+    dq = deque(maxlen=2)
+    rs = [0]
+    for i, b in enumerate(bi):
+        if b == '1':
+            dq.append(i)
+        if len(dq) == 2:
+            rs.append(dq[1] - dq[0] -1)
+            
+    return max(rs)
 
-bi = format(529, 'b')
-rs = []
-for i, b in enumerate(bi):
-    if b == '1':
-        rs.append(i)
-
-print(rs)
-
-if len(rs) < 2:
-    return 0
-else:
-    for pos in rs:
-        
+print(solution(529))
