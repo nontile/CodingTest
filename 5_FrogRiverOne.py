@@ -11,3 +11,25 @@
 # A[5]= 3
 # A[6]= 5 => x
 # A[7]= 4
+
+
+X = 5
+A = [1, 3, 1, 4, 2, 3, 5, 4]
+
+check = [0] * 5
+check_sum = 0
+
+for i in range(len(A)):
+    print(A[i] -1, end= ",")
+    print(check_sum, end= "  ")
+    print(check)
+    if check[A[i] -1] == 0:
+        check[A[i]-1] = 1
+        check_sum += 1
+    
+        if check_sum == X:
+            print(" 값 = " + str(i))
+    
+
+
+# 5, [1, 3, 1, 4, 2, 3, 5, 4]
